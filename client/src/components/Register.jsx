@@ -4,20 +4,29 @@ import { AuthContext } from '../context/AuthContext';
 
 const Register = () => {
   const [formData, setFormData] = useState({ name: '', uniqueId: '', college: '', password: '' });
+  const [file, setFile] = useState(null);
   const [error, setError] = useState('');
   const { register } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleFileChange = e => setFile(e.target.files[0]);
 
   const handleSubmit = async e => {
     e.preventDefault();
-    if (!formData.uniqueId || !formData.college) {
-      setError('Please provide both Unique ID and College Name');
+    if (!formData.uniqueId || !formData.college || !file) {
+      setError('Please provide all fields including ID Card');
       return;
     }
     
-    const res = await register(formData);
+    const data = new FormData();
+    data.append('name', formData.name);
+    data.append('uniqueId', formData.uniqueId);
+    data.append('college', formData.college);
+    data.append('password', formData.password);
+    data.append('idCard', file);
+
+    const res = await register(data);
     if (res.success) {
       navigate('/');
     } else {
@@ -65,6 +74,16 @@ const Register = () => {
               placeholder="Enter your Unique ID" 
               value={formData.uniqueId} 
               onChange={handleChange} 
+              required 
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-label">College ID Card (Image)</label>
+            <input 
+              type="file" 
+              className="form-control" 
+              accept="image/*"
+              onChange={handleFileChange} 
               required 
             />
           </div>

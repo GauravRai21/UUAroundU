@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
+const isVerified = require('../middleware/isVerified');
 const Message = require('../models/Message');
 const User = require('../models/User');
 
@@ -89,7 +90,7 @@ router.get('/:userId', auth, async (req, res) => {
 // @route   POST api/messages
 // @desc    Send a message
 // @access  Private
-router.post('/', auth, async (req, res) => {
+router.post('/', [auth, isVerified], async (req, res) => {
   try {
     const { receiverId, text } = req.body;
     if (!receiverId || !text) return res.status(400).json({ msg: 'Missing fields' });

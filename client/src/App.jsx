@@ -41,31 +41,11 @@ function App() {
                   <Routes>
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
-                    <Route path="/" element={
-                      <PrivateRoute>
-                        <Dashboard />
-                      </PrivateRoute>
-                    } />
-                    <Route path="/marketplace" element={
-                      <PrivateRoute>
-                        <Marketplace />
-                      </PrivateRoute>
-                    } />
-                    <Route path="/events" element={
-                      <PrivateRoute>
-                        <Events />
-                      </PrivateRoute>
-                    } />
-                    <Route path="/profile/:id" element={
-                      <PrivateRoute>
-                        <Profile />
-                      </PrivateRoute>
-                    } />
-                    <Route path="/messages" element={
-                      <PrivateRoute>
-                        <Messages />
-                      </PrivateRoute>
-                    } />
+                    <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+                    <Route path="/marketplace" element={<PrivateRoute><Marketplace /></PrivateRoute>} />
+                    <Route path="/events" element={<PrivateRoute><Events /></PrivateRoute>} />
+                    <Route path="/profile/:id" element={<PrivateRoute><Profile /></PrivateRoute>} />
+                    <Route path="/messages" element={<PrivateRoute><Messages /></PrivateRoute>} />
                   </Routes>
                 </main>
 

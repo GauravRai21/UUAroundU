@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { io } from 'socket.io-client';
 import { AuthContext } from '../context/AuthContext';
-import { Send, ArrowLeft, Search } from 'lucide-react';
+import { Send, ArrowLeft, Search, MessageSquare } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 
 const Messages = () => {
@@ -124,7 +124,12 @@ const Messages = () => {
         socket.emit('send_private_message', res.data);
       }
     } catch (err) {
-      console.error(err);
+      if (err.response?.status === 403) {
+        alert('Your account is not verified. Please upload your ID and wait for approval to send messages.');
+      } else {
+        console.error(err);
+        alert('Failed to send message. Please try again.');
+      }
     }
   };
 

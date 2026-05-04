@@ -18,6 +18,7 @@ const io = new Server(server, {
 // Middleware
 app.use(cors());
 app.use(express.json({ extended: false }));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
@@ -32,6 +33,7 @@ app.use('/api/marketplace', require('./routes/marketplace'));
 app.use('/api/users', require('./routes/users'));
 app.use('/api/search', require('./routes/search'));
 app.use('/api/messages', require('./routes/messages'));
+app.use('/api/verify', require('./routes/verify'));
 
 // Socket.io integration
 io.on('connection', (socket) => {

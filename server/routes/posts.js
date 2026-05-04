@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
+const isVerified = require('../middleware/isVerified');
 const Post = require('../models/Post');
 const Comment = require('../models/Comment');
 const User = require('../models/User');
@@ -8,7 +9,7 @@ const User = require('../models/User');
 // @route   POST api/posts
 // @desc    Create a post
 // @access  Private
-router.post('/', auth, async (req, res) => {
+router.post('/', [auth, isVerified], async (req, res) => {
   try {
     const { content, image, postType, hashtags, pollOptions } = req.body;
     
@@ -98,7 +99,7 @@ router.put('/like/:id', auth, async (req, res) => {
 // @route   POST api/posts/comment/:id
 // @desc    Comment on a post
 // @access  Private
-router.post('/comment/:id', auth, async (req, res) => {
+router.post('/comment/:id', [auth, isVerified], async (req, res) => {
   try {
     const { text } = req.body;
     
