@@ -6,6 +6,7 @@
 - [ ] **AUTH-01**: User can register and log in using Supabase Authentication.
 - [ ] **AUTH-02**: User is assigned to a specific community based on a Unique ID.
 - [ ] **AUTH-03**: Application data (posts, profiles, etc.) is stored and retrieved securely using Supabase.
+- [ ] **AUTH-04**: Signup includes College ID upload with OCR validation (mocked) and image metadata fraud detection.
 
 ### Social Feed
 - [ ] **FEED-01**: User can view a dynamic feed separated by "For You", "Nearby", and "Trending" tabs.
