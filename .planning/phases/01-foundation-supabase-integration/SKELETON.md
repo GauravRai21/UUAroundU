@@ -3,10 +3,10 @@
 **Goal**: Verify the "end-to-end" path from Local Dev → Supabase → Frontend → UI tokens.
 
 ## 1. Core Path
-- [ ] **Next.js Project**: Root `app/` structure with `src/` layout.
-- [ ] **Tailwind v4**: `@theme inline` mapping active and working.
-- [ ] **Supabase Connectivity**: `supabase.auth.getSession()` returns without error.
-- [ ] **Fonts**: Space Grotesk rendering on H1s.
+- [x] **Next.js Project**: Root `app/` structure with `src/` layout.
+- [x] **Tailwind v4**: `@theme inline` mapping active and working.
+- [x] **Supabase Connectivity**: `supabase.auth.getSession()` returns without error.
+- [x] **Fonts**: Space Grotesk rendering on H1s.
 
 ## 2. Minimal Success Criteria
 - The landing page displays "Around You" in Space Grotesk.
