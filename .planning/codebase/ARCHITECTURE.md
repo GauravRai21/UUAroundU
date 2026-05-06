@@ -7,6 +7,7 @@
 **Pattern:**
 - Next.js App Router (React Server Components)
 - Client-server split architecture
+- Note: Currently migrating from legacy Vite + React architecture (reference available in `old-code/`)
 
 **Layers:**
 - `app/` - Routing and presentation layer

@@ -11,6 +11,9 @@
 │   ├── globals.css       # Global Tailwind styles
 │   ├── layout.tsx        # Root layout
 │   └── page.tsx          # Home page
+├── old-code/             # Legacy Vite+React and Express apps (migration reference)
+│   ├── client/           # Old frontend
+│   └── server/           # Old backend
 ├── public/               # Static assets
 ├── eslint.config.mjs     # ESLint configuration
 ├── migration.md          # Migration plan documentation
@@ -26,6 +29,7 @@
 - **Pages:** `app/` directory
 - **Styles:** `app/globals.css`
 - **Config:** Root directory config files (`next.config.ts`, `tsconfig.json`)
+- **Legacy Reference:** `old-code/` directory containing the original Vite client and Express server
 
 ## Naming Conventions
 

@@ -4,7 +4,7 @@
 
 ## Technical Debt
 
-- Currently undergoing migration from Vite + React to Next.js + TypeScript.
+- Currently undergoing migration from Vite + React to Next.js + TypeScript. The original source is kept in `old-code/` for reference during this process.
 
 ## Known Issues
 
