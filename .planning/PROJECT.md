@@ -45,6 +45,7 @@ A seamlessly real-time, responsive user experience delivered through a modern, S
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
 | Next.js App Router | Offers better SEO, Server Components, and modern routing. | — Pending |
+| Supabase for Auth & DB | Replaces legacy MongoDB. Offers seamless Auth and Postgres DB integration. | — Pending |
 | Separate Backend Repo | Next.js serverless functions do not natively support long-lived WebSocket connections. | — Pending |
 | Socket.io Refactor | Need to adapt existing socket connections to Next.js SSR and Client boundaries. | — Pending |
 
